@@ -13,6 +13,14 @@ const Router =require("./routes/routes.js");
   
 // init express
 const app = express();
+
+const wss = new WebSocket.Server({ noServer: true });
+
+server.on('upgrade', function (request, socket, head) {
+  wss.handleUpgrade(request, socket, head, function (ws) {
+     wss.emit('connection', ws, request);
+  })
+})
   
 // use express json
 app.use(express.json());
