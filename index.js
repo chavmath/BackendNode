@@ -1,5 +1,8 @@
 // import express
 const express = require('express')
+require('dotenv').config();
+
+const port = process.env.PORT || 3001;
 // import cors
 const cors = require('cors')
  
@@ -23,5 +26,5 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // use router
 app.use(Router);
   
-app.listen(5000, () => console.log('Server running at http://localhost:5000'));
+app.listen(port, () => console.log('Server running'));
 
