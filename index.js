@@ -2,7 +2,7 @@
 const express = require('express')
 require('dotenv').config();
 
-const port = process.env.PORT || 3001;
+const port =  8081;
 // import cors
 const cors = require('cors')
  
@@ -26,5 +26,5 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // use router
 app.use(Router);
   
-app.listen(port, () => console.log('Server running'));
+app.listen(port, () => console.log('Server running at port ' + port));  
 
